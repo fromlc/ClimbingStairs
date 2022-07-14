@@ -1,11 +1,11 @@
-import java.util.ArrayList;
-
 /**
  * @author https://www.enjoyalgorithms.com/blog/climbing-stairs-problem
  *
  *         sandbox for solutions to Climbing Stairs problem
  */
 public class ClimbStairs {
+
+    private static final int MAXSTEPS = 45;
 
     /**
      * Constructor won't get called - why not?
@@ -28,25 +28,26 @@ public class ClimbStairs {
     }
 
     /**
-     * compute ways to climb nSteps steps
+     * compute ways to climb nSteps steps using static array
      * 
-     * @param nSteps int how many steps
+     * @param nSteps int how many steps, 1 <= nSteps <= 45
      * @return result int how many ways to climb
      */
     private static int countWays(int nSteps) {
         if (nSteps == 0)
             return 0;
+        if (nSteps > MAXSTEPS)
+            return -1;
 
-        ArrayList<Integer> stairCase = new ArrayList<>(nSteps + 1);
-        stairCase.add(0, 0);
-        stairCase.add(1, 1);
-        stairCase.add(2, 2);
+        int[] stairCase = new int[MAXSTEPS + 1];
+        stairCase[1] = 1;
+        stairCase[2] = 2;
 
         for (int i = 3; i <= nSteps; i++) {
-            stairCase.add(i, stairCase.get(i - 1) + stairCase.get(i - 2));
+            stairCase[i] = stairCase[i - 1] + stairCase[i - 2];
         }
 
-        return stairCase.get(nSteps);
+        return stairCase[nSteps];
     }
 
 }
