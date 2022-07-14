@@ -1,8 +1,8 @@
 ## Climbing Stairs
 
-Given a staircase of n steps which you can climb either one or two steps at a time, how many unique ways to climb all n steps? The order of steps matters.
+Given a staircase of n steps, which you can climb either one or two steps at a time, how many unique ways to climb all n steps?
 
-This is [problem 70 on LeetCode.com][leetcode.com 70].
+This is [problem 70 on LeetCode.com][leetcode 70], nicely [discussed on EnjoyAlgorithms.com][enjoyalgorithms climbing stairs].
 
 ### Example 1
 
@@ -27,4 +27,5 @@ Input: n = 5, output = 8.
 7. [2,1,2]
 8. [2,2,1]
 
-[leetcode.com 70]: https://leetcode.com/problems/climbing-stairs/
+[leetcode 70]: https://leetcode.com/problems/climbing-stairs/
+[enjoyalgorithms climbing stairs]: https://www.enjoyalgorithms.com/blog/climbing-stairs-problem
